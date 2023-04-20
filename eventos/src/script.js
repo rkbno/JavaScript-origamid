@@ -4,24 +4,24 @@
 //   console.log(event)
 // }
 
-// img.addEventListener('click', callback)
+// img.addEventListener('click',callback)
 
-// const imagensLista = document.querySelector('.animais-lista')
+// const animaisLista = document.querySelector('.animais-lista')
 
 // function callbackLista(event){
 //   console.log(event.currentTarget)
-//   console.log(event.currentTarget)
+//   console.log(event.target)
 //   console.log(event.type)
 // }
 
-// // imagensLista.addEventListener('click', callbackLista)
+// // animaisLista.addEventListener('click', callbackLista)
 
 // const linkExterno = document.querySelector('a[href^="http"]')
 
 // function handleLinkExterno(event){
 //   event.preventDefault()
-//   // console.log(event)
-//   // console.log(this)
+//   console.log(event)
+//   console.log(this.getAttribute('href'))
 //   console.log(event.currentTarget)
 // }
 
@@ -40,6 +40,8 @@
 
 // // window.addEventListener('scroll', handleEvent)
 // // window.addEventListener('risize', handleEvent)
+// // window.addEventListener('keydown', handleEvent)
+
 
 // function handleEvent(event){
 //   if(event.key === 's'){
@@ -55,7 +57,8 @@
 // const imgs = document.querySelectorAll('img')
 
 // function handleImg(event){
-//   console.log(event.currentTarget.getAttribute('src'))
+//   console.log(event.target)
+//   console.log(event.target.getAttribute('src'))
 // }
 
 // imgs.forEach((img) =>{
@@ -70,22 +73,42 @@
 // demais itens caso eles possuam a mesma. Previna
 // o comportamento padrão desses links
 
-const linkInterno = document.querySelectorAll('a')
-
-linkInterno.forEach((event) => {
-  event.classList.add('ativo')
-
-  
-  
-});
-
+const linkInterno = document.querySelectorAll('a[href^="#"]')
+function link(event){
+  event.preventDefault()
+  linkInterno.forEach((classe) =>{
+    classe.classList.remove('ativo')
+  })
+  event.target.classList.add('ativo')
+}
+linkInterno.forEach((event)=>{
+  event.addEventListener('click', link)
+})
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
-
-
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
+const todosElementos = document.querySelectorAll('body *')
 
+todosElementos.forEach((elemento)=>{
+  elemento.addEventListener('click', handleElemento)
+})
+
+function handleElemento(event){
+  event.currentTarget.remove()
+}
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+window.addEventListener('keydown', teclaT)
+
+function teclaT(event){
+  if(event.key === 't'){
+    document.documentElement.classList.toggle('textomaior')
+  }
+}
+
+
+
+

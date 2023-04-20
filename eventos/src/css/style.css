@@ -1,3 +1,7 @@
+html.textomaior{
+  font-size: 150%;
+}
+
 body, h1, h2, h3, ul, li, p, dd, dt, dl {
   margin: 0px;
   padding: 0px;
