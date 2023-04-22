@@ -23,33 +23,33 @@ function initTabNav(){
 
 initTabNav();
 
-// // funcão envolvendo a função do faq 
-// function initAccordion(){
-//   //chamada dos dt dentro de faq
-//   const accordionList = document.querySelectorAll('.js-accordion dt');
-//   const ativoClass = 'ativo';
-//   // validação se o js ta habilitado no browser
-//   if(accordionList.length){
+// funcão envolvendo a função do faq 
+function initAccordion(){
+  //chamada dos dt dentro de faq
+  const accordionList = document.querySelectorAll('.js-accordion dt');
+  const ativoClass = 'ativo';
+  // validação se o js ta habilitado no browser
+  if(accordionList.length){
     
-//     //adicionando class no dt e dd
-//     accordionList[0].classList.add(ativoClass);
-//     accordionList[0].nextElementSibling.classList.add(ativoClass);
+    //adicionando class no dt e dd
+    accordionList[0].classList.add(ativoClass);
+    accordionList[0].nextElementSibling.classList.add(ativoClass);
     
-//     //função de toggle nas classes do dt e dd
-//     function activeAccordion(){
-//       this.classList.toggle(ativoClass);
-//       this.nextElementSibling.classList.toggle(ativoClass);
-//     }
+    //função de toggle nas classes do dt e dd
+    function activeAccordion(){
+      this.classList.toggle(ativoClass);
+      this.nextElementSibling.classList.toggle(ativoClass);
+    }
     
-//     //forEach de click em dt
-//     accordionList.forEach((item)=>{
-//       item.addEventListener('click', activeAccordion);
-//     });
-//   };
-// };
+    //forEach de click em dt
+    accordionList.forEach((item)=>{
+      item.addEventListener('click', activeAccordion);
+    });
+  };
+};
 
-// //chamando a função do faq para ele ativar 
-// initAccordion();
+//chamando a função do faq para ele ativar 
+initAccordion();
 
 
 
