@@ -2,8 +2,6 @@ function Carro (marca, preco) {
   this.marca = marca
   this.preco = preco
 };
+const honda = new Carro ('honda', 10000);
+const fiat = new Carro('fiat', 15000);
 
-const honda = new Carro ('honda', 10000)
-
-
-const fiat = new Carro('fiat', 15000)
