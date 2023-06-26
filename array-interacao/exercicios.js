@@ -1,28 +1,26 @@
 // Selecione cada curso e retorne uma array
 // com objetos contendo o título, descricao,
 // aulas e horas de cada curso
-const aulas = [
-  {
-    nome: 'HTML 1',
-    min: 15
-  },
-  {
-    nome: 'HTML 2',
-    min: 10
-  },
-  {
-    nome: 'CSS 1',
-    min: 20
-  },
-  {
-    nome: 'JS 1',
-    min: 25
-  },
-]
+const cursos = document.querySelectorAll('.curso');
+const arrayCursos = Array.from(cursos);
 
-aulas.forEach((item) => { 
-  console.log(item);
+const objetoCurso = arrayCursos.map((curso) => {
+  const titulo = curso.querySelector('h1').innerText;
+  const descricao = curso.querySelector('p').innerText;
+  const aulas = curso.querySelector('.aulas').innerText;
+  const horas = curso.querySelector('.horas').innerText;
+  return {
+    titulo,
+    descricao,
+    horas,
+    aulas,
+  };
+  
+  
 });
+console.log(objetoCurso);
+
+
 
 
 
@@ -34,7 +32,7 @@ const numeros = [3, 44, 333, 23, 122, 322, 33];
 const maiorQue100 = numeros.filter(n => n > 100);
 
 console.log(maiorQue100);
-console.log(numeros);
+
 
 
 // Verifique se Baixo faz parte
@@ -70,13 +68,18 @@ const compras = [
   }
 ]
 
-const newItens = compras.map((item) => {
-  const valor = +item.preco.replace('R$', '').trim().replace(',','.');
-  const total = valor.reduce((acumulador, atual) => {
-    return acumulador + atual;
-  });
+
+const valorTotal = compras.reduce((acumulador, item) => {
+  const precoLimp = +item.preco.replace('R$', '').trim().replace(',', '.')
+  return acumulador + precoLimp
+  
+},0);
+
+console.log(valorTotal)
+
+
+ 
   
   
   
-  console.log(total);
-});
+
