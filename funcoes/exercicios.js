@@ -2,11 +2,12 @@
 // parágrafos acima utilizando reduce
 const p = document.querySelectorAll('p')
 
-const totalP = Array.prototype.reduce.call(p, (acumulador, item) => {
-  console.log(item)
-  return acumulador + item.innerText.length
-}, 0);
-console.log(totalP)
+const totalP = Array.prototype.reduce.call(p, (acumulador, item) => acumulador + item.innerText.length, 0);
+
+console.log(p);
+console.log(totalP);
+
+
 
 // Crie uma função que retorne novos elementos
 // html, com os seguintes parâmetros
@@ -14,11 +15,13 @@ console.log(totalP)
 function criarElemento (tag, classe, conteudo){
   const elemento = document.createElement(tag);
   classe ? elemento.classList.add(classe) : null;
-  conteudo ? elemento.innerHTML = conteudo : null;
+  conteudo ? conteudo.innerText = conteudo : null; 
   return elemento;
 };
   
-  
+
+console.log(criarElemento('h1', 'ativo'));
+
 
 
 
@@ -26,6 +29,7 @@ function criarElemento (tag, classe, conteudo){
 // Crie uma nova função utilizando a anterior como base
 // essa nova função deverá sempre criar h1 com a
 // classe titulo. Porém o parâmetro conteudo continuará dinâmico
-const h1All = criarElemento.bind(null, 'h1', 'titulo');
 
-console.log(h1All())
+const novaFunction = criarElemento.bind(null, 'h1', 'titulo');
+
+console.log(novaFunction())
