@@ -15,12 +15,12 @@ console.log(totalP);
 function criarElemento (tag, classe, conteudo){
   const elemento = document.createElement(tag);
   classe ? elemento.classList.add(classe) : null;
-  conteudo ? conteudo.innerText = conteudo : null; 
+  conteudo ? conteudo.innerHTML = conteudo : null; 
   return elemento;
 };
   
 
-console.log(criarElemento('h1', 'ativo'));
+console.log(criarElemento('div', 'azul', 'sou a porra do conteudo'));
 
 
 
