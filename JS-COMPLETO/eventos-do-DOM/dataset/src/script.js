@@ -10,7 +10,8 @@ function initTabNav(){
       tabContent.forEach((section) => {
         section.classList.remove('ativo');
       })
-      tabContent[index].classList.add('ativo');
+      const descricao = tabContent[index].dataset.anime
+      tabContent[index].classList.add('ativo', descricao);
     };
 
     tabMenu.forEach((itemMenu, index) =>{
