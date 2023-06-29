@@ -1,6 +1,6 @@
 function initTabNav(){
-  const tabMenu = document.querySelectorAll('.js-tabmenu li'); // imagens
-  const tabContent = document.querySelectorAll('.js-tabcontent section'); // conteudo
+  const tabMenu = document.querySelectorAll('[data-tab="menu"] li'); // imagens
+  const tabContent = document.querySelectorAll('[data-tab="content"] section'); // conteudo
   
   
   if(tabMenu.length && tabContent.length){
@@ -27,7 +27,7 @@ initTabNav();
 // funcão envolvendo a função do faq 
 function initAccordion(){
   //chamada dos dt dentro de faq
-  const accordionList = document.querySelectorAll('.js-accordion dt');
+  const accordionList = document.querySelectorAll('[data-anime="accordion"] dt');
   const ativoClass = 'ativo';
   // validação se o js ta habilitado no browser
   if(accordionList.length){
@@ -56,7 +56,7 @@ initAccordion();
 function initScrollSuave(){
 
   //chamada dos linksInternos dentro no menu
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]')
+  const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]')
 
   // validação se o js ta habilitado no browser
   if(linksInternos.length){
@@ -98,7 +98,7 @@ initScrollSuave();
 function initAnimacaoScroll(){
 
   //chamada dos sections
-  const sections = document.querySelectorAll('.js-scroll');
+  const sections = document.querySelectorAll('[data-anime="sroll"]');
   
   // validação se o js ta habilitado no browser
   if(sections.length){
