@@ -1,9 +1,7 @@
-const doc = fetch('./style.css')
+const imagem = fetch('https://viacep.com.br/ws/35225000/json/');
 
-doc.then(r => r.text())
-.then(body =>{
-    const conteudo = document.querySelector('.conteudo')
-    const style = document.createElement('style')
-    style.innerHTML = body
-    conteudo.appendChild(style)
-}) 
+
+imagem.then(r => {
+    console.log(r)
+    r.headers.forEach(console.log)
+})
